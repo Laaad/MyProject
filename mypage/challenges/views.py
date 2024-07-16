@@ -25,13 +25,9 @@ challenges = {
 def index(request):
     list_items = ''
     months = list(challenges.keys())
-    for month in months:
-        capitalised_month = month.capitalize()
-        month_path = reverse("month-challenge",args=[month])
-        list_items += f"<li><a href=\"{month_path}\">{capitalised_month}</a></li>"
-
-    response_data = f"<ul>{list_items}"
-    return HttpResponse(response_data)
+    return render(request, "challenges/index.html",
+                  {'months':months
+                   })
 
 
 def monthly_challenge_by_number(request, month):
@@ -50,4 +46,7 @@ def monthly_challenge(request, month):
     if month.lower() not in challenges.keys():
         return HttpResponse("<h1>This month is not supported!</h1>")
     challenge_text = challenges[month.lower()]
-    return render(request, 'challenges/challenge.html')
+    return render(request, 'challenges/challenge.html', {
+        "text": challenge_text,
+        "month_name": month,
+    })
