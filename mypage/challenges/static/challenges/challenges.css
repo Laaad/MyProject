@@ -1,36 +1,37 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-
 ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 300px;
+  list-style: none;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 20rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 30rem;
+  background-color: #eeeeee;
 }
 
-ul li {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s;
+li {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
 
-ul li:hover {
-    background-color: #f0f0f0;
+li:last-of-type,
+li:nth-of-type(6) {
+  border-bottom: none;
 }
 
-ul li a {
-    text-decoration: none;
-    color: #333;
+li a {
+  text-decoration: none;
+  color: #383838;
 }
 
-ul li a:hover {
-    color: #555;
+li a:hover,
+li a:active {
+  color: #7e0154;
 }
